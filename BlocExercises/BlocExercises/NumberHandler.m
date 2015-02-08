@@ -16,10 +16,16 @@
 }
 
 - (NSArray *) arrayOfNumbersBetweenNumber:(NSInteger)number andOtherNumber: (NSInteger)otherNumber {
-    /* WORK HERE */
-    NSArray *rangeArray = [NSArray new];
-    for (NSInteger i = number; i <= otherNumber; i++) {
-        rangeArray = [rangeArray arrayByAddingObject:[NSNumber numberWithInteger:i]];
+    // Slower
+//    NSArray *rangeArray = [NSArray new];
+//    for (NSInteger i = number; i <= otherNumber; i++) {
+//        rangeArray = [rangeArray arrayByAddingObject:[NSNumber numberWithInteger:i]];
+    //    }
+    
+    // Faster
+    NSMutableArray *rangeArray = [NSMutableArray array];
+    for ( NSInteger i = number; i <= otherNumber; i++) {
+        [rangeArray addObject:@(i)] ;
     }
     return rangeArray;
 }
